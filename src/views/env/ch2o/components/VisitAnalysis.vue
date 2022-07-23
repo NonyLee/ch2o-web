@@ -164,6 +164,7 @@
   const loadCh2o = async (startDate: string, endDate: string) => {
     let infos = await getCh2os({
       startTime: startDate,
+      // startTime: dayjs(endDate).add(-1, 'day').format('YYYY-MM-DD HH:mm:ss'),
       endTime: dayjs(endDate).add(1, 'day').format('YYYY-MM-DD HH:mm:ss'),
     });
 

@@ -7,6 +7,7 @@
           <Radio.Button value="m">月</Radio.Button>
           <Radio.Button value="w">周</Radio.Button>
           <Radio.Button value="d">日</Radio.Button>
+          <Radio.Button value="ld">昨天</Radio.Button>
         </RadioGroup>
       </div>
     </template>
@@ -26,6 +27,9 @@
     switch (queryType.value) {
       case 'd':
         ch2oChart.value.loadCh2o(dayjs().format('YYYY-MM-DD'), dayjs().format('YYYY-MM-DD'));
+        break;
+      case 'ld':
+        ch2oChart.value.loadCh2o(dayjs().add(-1, 'day').format('YYYY-MM-DD'), dayjs().add(-1, 'day').format('YYYY-MM-DD'));
         break;
       case 'w':
         ch2oChart.value.loadCh2o(dayjs().startOf('week').format('YYYY-MM-DD'), dayjs().endOf('week').format('YYYY-MM-DD'));
